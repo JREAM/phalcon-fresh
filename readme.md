@@ -15,5 +15,5 @@ This is a **CLI** application to complement the dev tools.
 
 ## Contributors
 
-- Jesse Boyer ([GitHub](http://github.com/JREAM), [Webdite](http://jream.com))
+- Jesse Boyer ([GitHub](http://github.com/JREAM), [Website](http://jream.com))
 - You are welcome to contribute!
