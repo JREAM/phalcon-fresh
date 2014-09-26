@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/JREAM/phalcon-fresh.svg)](https://travis-ci.org/JREAM/phalcon-fresh)
+
 # Phalcon Fresh
 
 This is a **CLI** application to complement the dev tools.
@@ -6,6 +8,7 @@ This is a **CLI** application to complement the dev tools.
 - Applications are based on the working examples provided at [Phalcon MVC](https://github.com/phalcon/mvc).
 
 ## Status
+
 - **Unstable** - In Development
 - Contribute if you like.
 
