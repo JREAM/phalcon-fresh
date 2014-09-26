@@ -12,18 +12,56 @@ $config = new Phalcon\Config([
         // This folder must match with /tasks/<Name>Task.php
         "multi" => [
             "folders" => [
+                "{% app %}/controllers",
+                "{% app %}/models",
+                "{% app %}/views",
+                "{% app %}/plugins"
+            ],
+            "files" => [
+                "{% app %}/Module.php",
+                "public/index.php",
+                ".htaccess"
+            ]
+        ],
+        "micro" => [
+            "folders" => [
+                "controllers",
+                "public"
+            ],
+            "files" => [
+                "public/index.html",
+                ".htaccess"
+            ]
+        ],
+        "hmvc" => [
+            "folders" => [
+                "controllers",
+                "public"
+            ],
+            "files" => [
+                "public/index.html",
+                ".htaccess"
+            ]
+        ],
+        "single" => [
+            "folders" => [
                 "controllers",
                 "models",
                 "views",
-                "plugins"
+                "public"
             ],
-            "files" => "Module.php"
-        ],
+            "files" => [
+                "public/index.html",
+                ".htaccess"
+            ]
+        ]
     ],
 
     // This is what is displayed if nothing processes
     "command_list" => [
+        "hmvc create <app_name>",
+        "micro create <app_name> (Primary In Dev)",
         "multi create <app_name>",
-        "sample create <app_name>"
+        "single create <app_name>",
     ]
 ]);
