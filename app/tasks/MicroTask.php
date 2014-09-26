@@ -1,6 +1,7 @@
 <?php
 
-class MicroTask extends AbstractTask
+class MicroTask
+Task extends AbstractTask
 {
 
     public function mainAction()

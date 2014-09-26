@@ -1,7 +1,9 @@
 # Phalcon Fresh
 
 This is a **CLI** application to complement the dev tools.
-This applies to the [Phalcon](http://phalconphp.com/en/) Framework.
+
+- This applies to the [Phalcon](http://phalconphp.com/en/) Framework.
+- Applications are based on the working examples provided at [Phalcon MVC](https://github.com/phalcon/mvc).
 
 ## Status
 - **Unstable** - In Development
@@ -13,5 +15,5 @@ This applies to the [Phalcon](http://phalconphp.com/en/) Framework.
 
 ## Contributors
 
-- Jesse Boyer <[GitHub](http://github.com/JREAM)><[Site](http://jream.com)>
+- Jesse Boyer ([GitHub](http://github.com/JREAM), [Webdite](http://jream.com))
 - You are welcome to contribute!
