@@ -4,7 +4,7 @@ $config = new Phalcon\Config([
 
     // This is the output folder, you would change this
     // to your actual applications source folder, eg: /apps
-    "app_path" => APP_PATH . "/../tests/",
+    "app_path" => APP_PATH . "/../output/",
 
     // These items to build for a given task
     "tasks" => [
@@ -29,7 +29,7 @@ $config = new Phalcon\Config([
                 "public"
             ],
             "files" => [
-                "public/index.html",
+                "public/index.php",
                 ".htaccess"
             ]
         ],
@@ -39,7 +39,7 @@ $config = new Phalcon\Config([
                 "public"
             ],
             "files" => [
-                "public/index.html",
+                "public/index.php",
                 ".htaccess"
             ]
         ],
@@ -51,7 +51,7 @@ $config = new Phalcon\Config([
                 "public"
             ],
             "files" => [
-                "public/index.html",
+                "public/index.php",
                 ".htaccess"
             ]
         ]
