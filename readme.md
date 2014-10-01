@@ -7,6 +7,15 @@ This is a **CLI** application to complement the dev tools.
 - This applies to the [Phalcon](http://phalconphp.com/en/) Framework.
 - Applications are based on the working examples provided at [Phalcon MVC](https://github.com/phalcon/mvc).
 
+## Index
+
+- [Status](#status)
+- [Requirements](#requirements)
+- [How it Works](#how-it-works)
+- [System Structure](#system-structure)
+- [Contributors](#contributors)
+- [Special Thanks](#special-thanks)
+
 ## Status
 
 - **Unstable** - In Development
@@ -30,11 +39,11 @@ to run a command you could create an hmvc app called `firefly` by typing:
 ## System Structure
 Keep in mind **this is in development** and just started. Improvements will come along.
 
-- */app* - Contains all of the application to build
-    - */config* - Contains version, Save Path, Tasks, and command list.
-    - */tasks* - These are all the Phalcon CLI Tasks. The AbstractTask does most of the work.
-    - */template* - This contains templates for the task you call
-- */output* - This is the current output folder right now for testing, in reality it would be a real app folder.
+- **/app** - Contains all of the application to build
+    - **/config** - Contains version, Save Path, Tasks, and command list.
+    - **/tasks** - These are all the Phalcon CLI Tasks. The AbstractTask does most of the work.
+    - **/template** - This contains templates for the task you call
+- **/output** - This is the current output folder right now for testing, in reality it would be a real app folder.
 
 There are currently two replaceable placeholders `%app%` and `%namespace%`. Sometimes
 namespace won't apply depending on what you create.
@@ -46,3 +55,7 @@ if I do it automatically it would be `userdashboard` with a namespace of `Userda
 
 - Jesse Boyer ([GitHub](http://github.com/JREAM), [Website](http://jream.com))
 - You are welcome to contribute!
+
+## Special Thanks
+
+Credit is always due to the awesome authors of [Phalcon](http://phalconphp.com/en/). So a special thanks goes out to the developers and contributors.
