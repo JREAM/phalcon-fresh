@@ -12,18 +12,3 @@ class IndexController extends Phalcon\Mvc\Controller;
     }
 
 }
-
-{% newfile:example %}
-<?php
-
-use Phalcon\Http\Response;
-
-class SayController extends Phalcon\Mvc\Controller
-{
-
-    public function indexAction()
-    {
-        return new Response('Index Action');
-    }
-
-}

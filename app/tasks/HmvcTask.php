@@ -2,6 +2,7 @@
 
 class HmvcTask extends AbstractTask
 {
+    protected $type = 'hmvc';
 
     public function mainAction()
     {
@@ -10,7 +11,12 @@ class HmvcTask extends AbstractTask
 
     public function createAction($params = null)
     {
-        echo "Not Ready..\n";
+        $this->app = strtolower($params[0]);
+
+        $this->createFolders();
+        $this->createFiles();
+
+        echo "WIP.. Check Output folder..\n";
     }
 
 }

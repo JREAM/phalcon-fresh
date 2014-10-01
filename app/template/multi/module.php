@@ -1,6 +1,6 @@
 <?php
 
-namespace {% namespace %};
+namespace %namespace%;
 
 class Module
 {
@@ -11,9 +11,9 @@ class Module
         $loader = new \Phalcon\Loader();
 
         $loader->registerNamespaces(array(
-            '{% namespace %}\Controllers' => '../apps/{% app %}/controllers/',
-            '{% namespace %}\Models' => '../apps/{% app %}/models/',
-            '{% namespace %}\Plugins' => '../apps/{% app %}/plugins/',
+            '%namespace%\Controllers' => '../apps/%app%/controllers/',
+            '%namespace%\Models' => '../apps/%app%/models/',
+            '%namespace%\Plugins' => '../apps/%app%/plugins/',
         ));
 
         $loader->register();
@@ -35,14 +35,14 @@ class Module
             // $eventManager->attach('dispatch', new \Acl('backend'));
 
             $dispatcher->setEventsManager($eventManager);
-            $dispatcher->setDefaultNamespace("{% namespace %}\Controllers\\");
+            $dispatcher->setDefaultNamespace("%namespace%\Controllers\\");
             return $dispatcher;
         });
 
         //Registering the view component
         $di->set('view', function() {
             $view = new \Phalcon\Mvc\View();
-            $view->setViewsDir('../apps/{% app %}/views/');
+            $view->setViewsDir('../apps/%app%/views/');
             return $view;
         });
 

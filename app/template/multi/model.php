@@ -1,6 +1,6 @@
 <?php
 
-namespace {% namespace %}\Models;
+namespace %namespace%\Models;
 
 class Default extends \Phalcon\Mvc\Model
 {

@@ -11,7 +11,6 @@ use Phalcon\Loader,
 
 class HMVCApplication extends MVCApplication
 {
-
     /**
      * HMVCApplication Constructor
      *
@@ -85,7 +84,6 @@ class HMVCApplication extends MVCApplication
     }
 
 }
-
 
 $app = new HMVCApplication(new FactoryDefault());
 

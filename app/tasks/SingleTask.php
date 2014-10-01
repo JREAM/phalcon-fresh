@@ -2,6 +2,7 @@
 
 class SingleTask extends AbstractTask
 {
+    protected $type = 'single';
 
     public function mainAction()
     {

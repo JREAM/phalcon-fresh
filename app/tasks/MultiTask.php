@@ -3,6 +3,8 @@
 class MultiTask extends AbstractTask
 {
 
+    protected $type = 'multi';
+
     public function mainAction()
     {
         $this->displayCommands();

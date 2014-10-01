@@ -1,8 +1,10 @@
 <?php
 
 class MicroTask
+
 Task extends AbstractTask
 {
+    protected $type = 'micro';
 
     public function mainAction()
     {

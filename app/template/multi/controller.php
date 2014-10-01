@@ -1,6 +1,6 @@
 <?php
 
-namespace {% namespace %}\Controllers;
+namespace %namespace%\Controllers;
 
 class IndexController extends \Phalcon\Mvc\Controller
 {
