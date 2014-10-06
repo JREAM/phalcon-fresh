@@ -2,7 +2,7 @@
 
 namespace %namespace%\Models;
 
-class Default extends \Phalcon\Mvc\Model
+class %model% extends \Phalcon\Mvc\Model
 {
 
     public function getSource()

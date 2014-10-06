@@ -2,6 +2,7 @@
 
 $app = new Phalcon\Mvc\Micro();
 
+// Home Page
 $app->get('/', function () {
     echo "<h1>Home Page</h1>";
 });

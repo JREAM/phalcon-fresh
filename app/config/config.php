@@ -2,11 +2,15 @@
 $config = new Phalcon\Config([
     "version" => "1.0.0-dev",
 
+    // --------------------------------------------------------------
     // This is the output folder, you would change this
     // to your actual applications source folder, eg: /apps
+    // --------------------------------------------------------------
     "save_path" => APP_PATH . "/../output/",
 
+    // --------------------------------------------------------------
     // These items to build for a given task
+    // --------------------------------------------------------------
     "tasks" => [
 
         // This folder must match with /tasks/<Name>Task.php
@@ -57,11 +61,25 @@ $config = new Phalcon\Config([
         ]
     ],
 
+    // --------------------------------------------------------------
     // This is what is displayed if nothing processes
+    // --------------------------------------------------------------
     "command_list" => [
-        "hmvc create <app_name>",
-        "micro create <app_name> (Primary In Dev)",
-        "multi create <app_name>",
-        "single create <app_name>",
+        'hmvc' => [
+            'app' => []
+        ],
+        'micro' => [
+            'app'        => null
+        ],
+        'multi' => [
+            'app'        => null,
+            'controller' => [],
+            'model'      => [],
+            'view'       => [],
+            'mvc'        => []
+        ],
     ]
 ]);
+
+// End of File
+// --------------------------------------------------------------

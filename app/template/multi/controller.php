@@ -2,7 +2,7 @@
 
 namespace %namespace%\Controllers;
 
-class IndexController extends \Phalcon\Mvc\Controller
+class %controller%Controller extends \Phalcon\Mvc\Controller
 {
 
     /**

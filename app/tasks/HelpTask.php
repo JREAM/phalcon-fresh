@@ -1,8 +1,8 @@
 <?php
 
-class MainTask extends AbstractTask
+class HelpTask extends AbstractTask
 {
-    protected $classification = 'main';
+    protected $classification = 'help';
 
     /**
     * Displays a list of commands if nothing is passed
@@ -11,7 +11,7 @@ class MainTask extends AbstractTask
     */
     public function mainAction($params = null)
     {
-        $this->displayCommands();
+        echo "This will display Help..." . PHP_EOL;
     }
 }
 

@@ -18,17 +18,19 @@ class AbstractTask extends \Phalcon\CLI\Task
     protected $config;
 
     /**
-     * The Task called for finding templates,
-     * This is assigned in the Child Class
+     * The Task called for using the correct templates.
+     *     Assigned in the Child Class (eg: MultiTask.php)
      * @var string
      */
-    protected $type;
+    protected $classification;
 
     /**
-     * The app name the user defines
+     * The command that was called
      * @var string
      */
-    protected $app;
+    protected $command;
+
+    // --------------------------------------------------------------
 
     /**
      * Get the Default DI
@@ -40,6 +42,14 @@ class AbstractTask extends \Phalcon\CLI\Task
         $this->di = \Phalcon\DI\FactoryDefault::getDefault();
         $this->config = $this->getDI()->get('config');
     }
+
+    // --------------------------------------------------------------
+
+    public function mainAction() {
+        $this->displayCommands();
+    }
+
+    // --------------------------------------------------------------
 
     /**
      * Display Commands when an impromper call was made
@@ -60,14 +70,107 @@ class AbstractTask extends \Phalcon\CLI\Task
         if (!is_array($params))
         {
             echo PHP_EOL . "You can run the following commands:" . PHP_EOL . PHP_EOL;
-            foreach ($this->config->command_list as $cmd)
+
+            // List the commands for the user
+            foreach ($this->config->command_list as $command_key => $command)
             {
-                echo "   $ $cmd " . PHP_EOL;
+                // Make sure the command has sub-items
+                if (count($command))
+                {
+                    // Loop through each sub command
+                    foreach ($command as $option_key => $option)
+                    {
+                        if ($option === null) {
+                            echo "  $ $command_key $option_key <name>" . PHP_EOL;
+                        } elseif (!is_scalar($option)) {
+                            echo "  $ $command_key $option_key <name> [<name>] [..]" . PHP_EOL;
+                        }
+                    }
+                    echo PHP_EOL;
+                }
             }
+
             echo PHP_EOL;
             exit;
         }
     }
+
+    // --------------------------------------------------------------
+
+    /**
+     * Prepares incoming args to build the app type
+     *
+     * @param  array $params
+     *
+     * @return object
+     */
+    protected function prepareArguments($params)
+    {
+        // For Invalid Calls
+        if (empty($params)) {
+            $this->displayCommands();
+        }
+
+        // Prepare thy data
+        $data = new stdClass();
+
+        // Build a structure for the parameteres
+        foreach ($params as $param_key => $param) {
+            $data->item[$param_key] = $param;
+        }
+
+        return $data;
+    }
+
+    // --------------------------------------------------------------
+
+    public function appAction($params) {
+        echo $this->classification . PHP_EOL;
+        $this->command = __FUNCTION__;
+        echo $this->command . PHP_EOL;
+
+        print_r($params);
+        $data = $this->prepareArguments($params);
+        print_r($data);
+    }
+
+    // --------------------------------------------------------------
+
+    public function controllerAction($params) {
+        echo $this->classification . PHP_EOL;
+        $this->command = 'controller';
+        echo $this->command . PHP_EOL;
+
+        print_r($params);
+        $data = $this->prepareArguments($params);
+        print_r($data);
+    }
+
+    // --------------------------------------------------------------
+
+    public function modelAction($params) {
+        echo $this->classification . PHP_EOL;
+        $data = $this->prepareArguments($params);
+        print_r($data);
+    }
+
+    // --------------------------------------------------------------
+
+    public function viewAction($params) {
+        echo $this->classification . PHP_EOL;
+        $data = $this->prepareArguments($params);
+        print_r($data);
+    }
+
+    // --------------------------------------------------------------
+
+    public function mvcAction($params) {
+        echo $this->classification . PHP_EOL;
+        $data = $this->prepareArguments($params);
+        print_r($data);
+    }
+
+    // --------------------------------------------------------------
 
     /**
      * Creates the folders for a template
@@ -89,6 +192,8 @@ class AbstractTask extends \Phalcon\CLI\Task
             // }
         }
     }
+
+    // --------------------------------------------------------------
 
     /**
      * Creates the files for a template
@@ -119,8 +224,9 @@ class AbstractTask extends \Phalcon\CLI\Task
             // Otherwise do the default template parsing
             $this->parseTemplate($file);
         }
-
     }
+
+    // --------------------------------------------------------------
 
     /**
      * Opens a template and translates its content
@@ -148,6 +254,8 @@ class AbstractTask extends \Phalcon\CLI\Task
         print_r($data);
     }
 
+    // --------------------------------------------------------------
+
     /**
      * Removes the created items if there is a failure
      *
@@ -162,4 +270,9 @@ class AbstractTask extends \Phalcon\CLI\Task
         $this->app;
     }
 
+    // --------------------------------------------------------------
+
 }
+
+// End of File
+// --------------------------------------------------------------

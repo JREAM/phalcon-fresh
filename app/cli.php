@@ -70,3 +70,6 @@ define('CURRENT_ACTION', (isset($argv[2]) ? $argv[2] : null));
      echo "\nError: " . $e->getMessage() . "\n";
      exit(255);
  }
+
+// End of File
+// --------------------------------------------------------------

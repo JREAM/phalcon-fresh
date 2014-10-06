@@ -1,8 +1,8 @@
 <?php
 
-class MultiTask extends AbstractTask
+class HmvcTask extends AbstractTask
 {
-    protected $classification = 'multi';
+    protected $classification = 'hmvc';
 }
 
 // End of File

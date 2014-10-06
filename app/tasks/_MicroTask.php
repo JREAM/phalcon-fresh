@@ -1,8 +1,8 @@
 <?php
 
-class MultiTask extends AbstractTask
+class MicroTask extends AbstractTask
 {
-    protected $classification = 'multi';
+    protected $classification = 'micro';
 }
 
 // End of File
