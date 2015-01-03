@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
-import unittest
 
 
-class TestDatabase(unittest.TestCase):
+class TestDatabase(object):
 
     def setUp(self):
         pass

@@ -6,5 +6,7 @@ import os
 # to your actual applications source folder, eg: /apps
 # --------------------------------------------------------------
 
-BASE_PATH = os.path.dirname(__file__)
+CONFIG_PATH = os.path.dirname(__file__)
+BASE_PATH = os.path.abspath(os.path.join(CONFIG_PATH, '..'))
 SAVE_PATH = os.path.join(BASE_PATH, 'output')
+TEMPLATE_PATH = os.path.join(BASE_PATH, 'template')

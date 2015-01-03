@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
-import unittest
 
 
-class TestCli(unittest.TestCase):
+class TestCli(object):
 
     def setUp(self):
         pass

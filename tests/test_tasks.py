@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
-import unittest
+from config import tasks
 
 
-class TestTasks(unittest.TestCase):
+class TestTasks(object):
 
-    def setUp(self):
-        pass
-
-    def test_x(self):
-        pass
+    def test_display_commands(self):
+        """ Expecting a list
+        """
+        result = tasks.display_commands()
+        msg = "Expecting list got: %s" % type(result)
+        assert isinstance(result, list), msg

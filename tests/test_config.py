@@ -1,12 +1,26 @@
 # -*- coding: utf-8 -*-
-import unittest
+import os
+from config import settings
 
 
-class TestConfig(unittest.TestCase):
+class TestConfig(object):
 
-    def setUp(self):
-        pass
+    def test_configpath(self):
+        """ Does the base path exist?
+        """
+        assert os.path.exists(settings.CONFIG_PATH), settings.CONFIG_PATH
 
-    def test_save_path(self):
-        #assert config.SAVE_PATH is not False
-        pass
+    def test_basepath(self):
+        """ Does the base path exist?
+        """
+        assert os.path.exists(settings.BASE_PATH), settings.BASE_PATH
+
+    def test_savepath(self):
+        """ Does the save path exist?
+        """
+        assert os.path.exists(settings.SAVE_PATH), settings.SAVE_PATH
+
+    def test_templatepath(self):
+        """ Does the template path exist?
+        """
+        assert os.path.exists(settings.TEMPLATE_PATH), settings.TEMPLATE_PATH
